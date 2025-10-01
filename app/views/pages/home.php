@@ -1,4 +1,6 @@
-<?php foreach ($posts as $post) : ?>
+<?php foreach ($posts as $post) : 
+    $created_at = strtotime($post['created_at']); ?>
+
     <div class="col-md-12 blog-post row">
         <div class="post-title">
         
@@ -9,7 +11,7 @@
             >
         </div>
         <div class="post-info">
-            <span><?php echo $post['created_at']; ?></span> | <span><?php echo $post['name']; ?></span>
+            <span><?php echo date('d F Y', $created_at); ?></span> | <span><?php echo $post['name']; ?></span>
         </div>
         <p>
             <?php echo \Core\Helpers\truncate($post['text']); ?>
