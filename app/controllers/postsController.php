@@ -16,3 +16,13 @@ function homeAction (PDO $connexion) {
     include '../app/views/pages/home.php';
     $content = ob_get_clean();
 }
+
+function showAction (PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $post = \App\Models\PostsModel\findOneById($connexion, $id);
+    global $content, $title;
+    $title = "Alex Parker - ".$post['title'];
+    ob_start();
+    include '../app/views/pages/show.php';
+    $content = ob_get_clean();
+}

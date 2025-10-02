@@ -15,8 +15,6 @@
     <div id="main">
       <div class="container">
         <div class="row">
-            
-          
 
           <?php include_once '../app/views/templates/partials/_main.php'; ?>
 
