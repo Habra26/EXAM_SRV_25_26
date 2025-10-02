@@ -18,6 +18,8 @@
 
           <?php include_once '../app/views/templates/partials/_main.php'; ?>
 
+          
+
           <?php include_once '../app/views/templates/partials/_footer.php'; ?>
 
           </div>

@@ -9,6 +9,10 @@ switch ($_GET['posts']):
         PostsController\showAction($connexion, $_GET['id']);
     break;
 
+    case 'addForm':
+        PostsController\addFormAction($connexion);
+    break;
+
 default :
         PostsController\homeAction($connexion);
     break;

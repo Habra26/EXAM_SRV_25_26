@@ -1,6 +1,6 @@
 <!-- ADD A POST -->
         <div>
-        <a href="form.html" type="button" class="btn btn-primary"
+        <a href="posts/add/form" type="button" class="btn btn-primary"
             >Add a Post</a
         >
         </div>
@@ -33,4 +33,7 @@
         >
     </div>
 <?php endforeach; ?>
+
+<?php include_once '../app/views/templates/partials/_nav.php'; ?>
+
 <!-- Blog Post End -->
