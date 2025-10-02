@@ -11,7 +11,7 @@
     <div class="col-md-12 blog-post row">
         <div class="post-title">
         
-            <a href="?posts=show&id=<?php echo $post['id'] ?>">
+            <a href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>.html">
             <h1>
                 <?php echo $post['title']; ?>
             </h1></a
@@ -24,7 +24,7 @@
             <?php echo \Core\Helpers\truncate($post['text']); ?>
         </p>
         <a
-            href="?posts=show&id=<?php echo $post['id'] ?>"
+            href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>.html"
             class="
             button button-style button-anim
             fa fa-long-arrow-right

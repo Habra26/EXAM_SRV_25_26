@@ -3,6 +3,8 @@
 // Charger les params
 include_once '../app/config/params.php';
 
+include_once '../core/constantes.php';
+
 // Charger la connexion
 include_once '../core/connexion.php';
 
