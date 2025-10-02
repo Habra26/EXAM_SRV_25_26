@@ -5,7 +5,9 @@ namespace App\Models\PostsModel;
 use \PDO;
 
 function findAll(PDO $connexion): array {
-    $sql = "SELECT *
+    $sql = "SELECT
+            p.*,                 
+            c.name AS category  
             FROM posts AS p
             LEFT JOIN categories AS c ON c.id = p.category_id
             ORDER BY p.created_at DESC

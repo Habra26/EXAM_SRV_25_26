@@ -11,7 +11,7 @@
             >
         </div>
         <div class="post-info">
-            <span><?php echo date('d F Y', $created_at); ?></span> | <span><?php echo $post['name']; ?></span>
+            <span><?php echo date('d F Y', $created_at); ?></span> | <span><?php echo $post['category']; ?></span>
         </div>
         <p>
             <?php echo \Core\Helpers\truncate($post['text']); ?>
