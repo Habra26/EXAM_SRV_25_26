@@ -22,6 +22,10 @@ switch ($_GET['posts']):
         ]);
     break;
 
+    case 'delete' : 
+        PostsController\deleteAction($connexion, $_GET['id']);
+    break;
+
 default :
         PostsController\homeAction($connexion);
     break;

@@ -43,3 +43,9 @@ function addInsertAction(PDO $connexion, array $data) {
     header('location: /exam/EXAM_SRV_25_26/public/');
     
 }
+
+function deleteAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $return = \App\Models\PostsModel\deleteOneById($connexion, $id);
+    header('location: /exam/EXAM_SRV_25_26/public/');
+}

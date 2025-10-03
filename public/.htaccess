@@ -9,6 +9,9 @@ RewriteRule ^posts/add/form.html$ index.php?posts=addForm [L]
 # AJOUT POST : INSERT
 RewriteRule ^posts/add/insert.html$ index.php?posts=addInsert [L]
 
+# SUPRRESSION D'UN POST : DELETE
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9-]+)/delete\.html$ index.php?posts=delete&id=$1&slug=$2 [L]
+
 
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]

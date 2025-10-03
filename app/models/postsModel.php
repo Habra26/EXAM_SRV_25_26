@@ -43,3 +43,11 @@ function insertOne($connexion, array $data):int {
     $rs->execute();
     return $connexion->lastInsertId();
 }
+
+function deleteOneById(PDO $connexion, int $id): bool {
+    $sql = "DELETE FROM posts
+            WHERE id = :id;";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, PDO::PARAM_INT);
+    return $rs->execute();
+}
