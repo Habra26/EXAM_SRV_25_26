@@ -61,3 +61,9 @@ function editFormAction(PDO $connexion, int $id) {
     include '../app/views/pages/editForm.php';
     $content = ob_get_clean();
 }
+
+function editUpdateAction(PDO $connexion, int $id, $data) {
+    include_once '../app/models/postsModel.php';
+    $return = \App\Models\PostsModel\updateOneById($connexion, $id, $data);
+    header('location: /exam/EXAM_SRV_25_26/public/');
+}

@@ -51,3 +51,19 @@ function deleteOneById(PDO $connexion, int $id): bool {
     $rs->bindValue(':id', $id, PDO::PARAM_INT);
     return $rs->execute();
 }
+
+function updateOneById(PDO $connexion, int $id, array $data):bool {
+    $sql = "UPDATE posts
+            SET title = :title,
+            text = :text,
+            quote = :quote,
+            category_id = :category_id
+            WHERE id = :id;";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, PDO::PARAM_INT);
+    $rs->bindValue(':title', $data['title'], PDO::PARAM_STR);
+    $rs->bindValue(':text', $data['text'], PDO::PARAM_STR);
+    $rs->bindValue(':quote', $data['quote'], PDO::PARAM_STR);
+    $rs->bindValue(':category_id', $data['category_id'], PDO::PARAM_INT);
+    return $rs->execute();
+}

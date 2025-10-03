@@ -15,6 +15,9 @@ RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9-]+)/delete\.html$ index.php?posts=dele
 # FORMULAIRE DE MODIFICATION D'UN POST
 RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9-]+)/edit/form\.html$ index.php?posts=editForm&id=$1&slug=$2 [L]
 
+# FORMULAIRE DE MODIFICATION D'UN POST : UPDATE
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9-]+)/edit/update\.html$ index.php?posts=editUpdate&id=$1&slug=$2 [L]
+
 
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
