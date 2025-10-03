@@ -49,3 +49,15 @@ function deleteAction(PDO $connexion, int $id) {
     $return = \App\Models\PostsModel\deleteOneById($connexion, $id);
     header('location: /exam/EXAM_SRV_25_26/public/');
 }
+
+function editFormAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $post = \App\Models\PostsModel\findOneById($connexion, $id);
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAll($connexion);
+    global $content, $title;
+    $title = "Alex Parker - Edit a post";
+    ob_start();
+    include '../app/views/pages/editForm.php';
+    $content = ob_get_clean();
+}

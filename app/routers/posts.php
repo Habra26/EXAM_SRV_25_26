@@ -26,6 +26,10 @@ switch ($_GET['posts']):
         PostsController\deleteAction($connexion, $_GET['id']);
     break;
 
+    case 'editForm' :
+        PostsController\editFormAction($connexion, $_GET['id']);
+    break;
+
 default :
         PostsController\homeAction($connexion);
     break;
