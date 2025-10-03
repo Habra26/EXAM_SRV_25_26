@@ -36,3 +36,10 @@ function addFormAction(PDO $connexion) {
     include '../app/views/pages/addForm.php';
     $content = ob_get_clean();
 }
+
+function addInsertAction(PDO $connexion, array $data) {
+    include_once '../app/models/postsModel.php';
+    $id = \App\Models\PostsModel\insertOne($connexion, $data);
+    header('location: /exam/EXAM_SRV_25_26/public/');
+    
+}

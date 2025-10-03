@@ -13,6 +13,15 @@ switch ($_GET['posts']):
         PostsController\addFormAction($connexion);
     break;
 
+    case 'addInsert' :
+        PostsController\addInsertAction($connexion, [
+            'title' => $_POST['title'],
+            'text' => $_POST['text'],
+            'quote' => $_POST['quote'],
+            'category_id' => $_POST['category_id']
+        ]);
+    break;
+
 default :
         PostsController\homeAction($connexion);
     break;
